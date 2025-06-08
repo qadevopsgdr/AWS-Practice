@@ -1,0 +1,20 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: CF template - Create a VPC with a single public subnet 
+
+
+Resources: 
+  mycustomVPC:
+    Type: AWS::EC2::VPC
+    Properties:
+      CidrBlock: 10.0.0.0/16
+      EnableDnsSupport: true
+      EnableDnsHostnames: true
+      Tags:
+        - Key: Name
+          Value: mycustomVPC
+  
+Outputs:
+  outputmycustomVPC:
+    Description: "Description is - mycustomVPC VPC ID"
+    Value: !Ref mycustomVPC
+  
